@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import logo from '@/imports/ChatGPT_Image_Sep_4__2026__09_39_23_PM.png'
 import centrePhoto from '@/imports/ChatGPT_Image_Sep_5__2026__10_43_40_AM.png'
 
-type Lang = 'ta' | 'en' | 'hi'
+type Lang = 'ta' | 'en'
 
 /* ─── translations ─────────────────────────────────────────────────────── */
 const T = {
@@ -126,66 +126,6 @@ const T = {
     announce: '📢 Centre is open today — 7:00 AM to 7:00 PM.',
     quickLinks: 'Quick Links',
   },
-  hi: {
-    nav: ['होम', 'हमारे बारे में', 'सेवाएं', 'चिकित्सक', 'संपर्क'],
-    navIds: ['home', 'about', 'services', 'practitioners', 'contact'],
-    callBtn: 'कॉल करें',
-    whatsappBtn: 'व्हाट्सऐप',
-    directionsBtn: 'दिशा-निर्देश',
-    enquireBtn: 'पूछताछ',
-    since: '1900 से',
-    heroHeading: 'पीलिया उपचार केंद्र',
-    heroName: 'कुप्पुसामी गौंडर',
-    heroSub: 'पारंपरिक हर्बल उपचार · सेलम, तमिलनाडु',
-    heroDesc: 'सेलम जिले में 125 से अधिक वर्षों से परिवारों की सेवा करने वाला विश्वसनीय पारंपरिक हर्बल उपचार केंद्र।',
-    openHoursShort: 'सोम – शनि, सुबह 7 – शाम 7',
-    location: 'चिन्नसेलम, सेलम – 636 008',
-    aboutLabel: 'हमारे बारे में',
-    aboutHeading: 'एक सदी से अधिक का विश्वास',
-    aboutP1: 'कुप्पुसामी गौंडर पीलिया उपचार केंद्र 1900 से सेलम में पारंपरिक हर्बल उपचार प्रदान कर रहा है।',
-    aboutP2: 'यह एक वंशानुगत अभ्यास है जो अनुभवी चिकित्सकों की पीढ़ियों के माध्यम से चला आ रहा है। हमारा उपचार प्राकृतिक जड़ी-बूटियों पर आधारित है।',
-    stats: [
-      { num: '125+', label: 'वर्ष' },
-      { num: '3', label: 'पीढ़ियां' },
-      { num: 'हजारों', label: 'मरीज' },
-    ],
-    servicesLabel: 'सेवाएं',
-    servicesHeading: 'हमारी सेवाएं',
-    services: [
-      { icon: '🌿', title: 'हर्बल उपचार', desc: 'प्राकृतिक जड़ी-बूटियों से पारंपरिक पीलिया उपचार।' },
-      { icon: '🩺', title: 'परामर्श', desc: 'अनुभवी चिकित्सकों से व्यक्तिगत परामर्श।' },
-      { icon: '🔄', title: 'अनुवर्ती देखभाल', desc: 'उपचार के बाद निरंतर सहायता और निगरानी।' },
-      { icon: '📋', title: 'स्वास्थ्य मार्गदर्शन', desc: 'पीलिया जागरूकता और रोकथाम पर मार्गदर्शन।' },
-    ],
-    practitionersLabel: 'चिकित्सक',
-    practitionersHeading: 'हमारे चिकित्सक',
-    practitioners: [
-      { name: 'एस. सेंथिलकुमार', phone: '90037 45116', role: 'वरिष्ठ चिकित्सक' },
-      { name: 'एस. नित्यकुमार', phone: '94432 73535', role: 'चिकित्सक' },
-      { name: 'एस. पोन्नलगार', phone: '94444 55571', role: 'चिकित्सक' },
-    ],
-    faqLabel: 'FAQ',
-    faqHeading: 'अक्सर पूछे जाने वाले प्रश्न',
-    faqs: [
-      { q: 'केंद्र कहाँ स्थित है?', a: 'एरिपालयम रोड, चिन्नसेलम, सेलम – 636 008।' },
-      { q: 'खुलने का समय क्या है?', a: 'सोमवार से शनिवार, सुबह 7:00 बजे से शाम 7:00 बजे तक।' },
-      { q: 'क्या अपॉइंटमेंट जरूरी है?', a: 'नहीं। बिना अपॉइंटमेंट आ सकते हैं।' },
-      { q: 'संपर्क नंबर क्या हैं?', a: '90037 45116 | 94432 73535 | 94444 55571' },
-    ],
-    contactLabel: 'संपर्क',
-    contactHeading: 'संपर्क करें',
-    contactSub: 'हमें कॉल करें या WhatsApp पर संपर्क करें',
-    addressLabel: 'पता',
-    phoneLabel: 'फ़ोन',
-    hoursLabel: 'समय',
-    fullAddress: 'एरिपालयम रोड, चिन्नसेलम, सेलम – 636 008',
-    fullHours: 'सोमवार – शनिवार: सुबह 7:00 – शाम 7:00',
-    disclaimer: 'यह वेबसाइट केवल सामान्य जानकारी के लिए है। चिकित्सा सलाह के लिए योग्य डॉक्टर से संपर्क करें।',
-    footerDesc: '1900 से सेलम जिले में विश्वसनीय पारंपरिक हर्बल उपचार केंद्र।',
-    copyright: '© 2026 कुप्पुसामी गौंडर पीलिया उपचार केंद्र। सर्वाधिकार सुरक्षित।',
-    announce: '📢 केंद्र आज खुला है — सुबह 7:00 से शाम 7:00 बजे तक।',
-    quickLinks: 'त्वरित लिंक',
-  },
 }
 
 const phones = ['90037 45116', '94432 73535', '94444 55571']
@@ -196,7 +136,6 @@ const mapsLink = 'https://maps.google.com/?q=Kuppusamy+Goundar+Jaundice+Treatmen
 const langOptions: { code: Lang; native: string }[] = [
   { code: 'ta', native: 'தமிழ்' },
   { code: 'en', native: 'English' },
-  { code: 'hi', native: 'हिंदी' },
 ]
 
 /* ─── tiny icon components ─────────────────────────────────────────────── */
@@ -311,15 +250,15 @@ export default function App() {
               <div className="text-left hidden sm:block">
                 <p className="font-bold text-sm md:text-base leading-tight"
                   style={{ color: 'var(--color-gold-light)', fontFamily: 'var(--font-display)' }}>
-                  {lang === 'ta' ? 'குப்புசாமி கவுண்டர்' : lang === 'hi' ? 'कुप्पुसामी गौंडर' : 'Kuppusamy Goundar'}
+                  {lang === 'ta' ? 'குப்புசாமி கவுண்டர்' : 'Kuppusamy Goundar'}
                 </p>
                 <p className="text-[11px] text-white/60 leading-tight">
-                  {lang === 'ta' ? 'ஜாண்டீஸ் சிகிச்சை மையம்' : lang === 'hi' ? 'पीलिया उपचार केंद्र' : 'Jaundice Treatment Centre'}
+                  {lang === 'ta' ? 'ஜாண்டீஸ் சிகிச்சை மையம்' : 'Jaundice Treatment Centre'}
                 </p>
               </div>
               {/* Mobile-only short name */}
               <p className="sm:hidden font-bold text-sm" style={{ color: 'var(--color-gold-light)', fontFamily: 'var(--font-display)' }}>
-                {lang === 'ta' ? 'குப்புசாமி கவுண்டர்' : lang === 'hi' ? 'कुप्पुसामी' : 'KG Centre'}
+                {lang === 'ta' ? 'குப்புசாமி கவுண்டர்' : 'KG Centre'}
               </p>
             </button>
 
@@ -545,7 +484,7 @@ export default function App() {
             <div className="absolute -top-5 -right-3 md:-top-6 md:-right-6 w-20 h-20 md:w-24 md:h-24 rounded-full flex flex-col items-center justify-center border-4 shadow-xl font-bold text-center"
               style={{ background: 'var(--color-forest)', borderColor: 'var(--color-gold)', color: 'var(--color-gold-light)' }}>
               <span className="text-[10px] md:text-xs leading-tight">
-                {lang === 'ta' ? 'முதல்' : lang === 'hi' ? 'से' : 'Since'}
+                {lang === 'ta' ? 'முதல்' : 'Since'}
               </span>
               <span className="text-xl md:text-2xl leading-tight font-bold">1900</span>
             </div>
@@ -575,10 +514,10 @@ export default function App() {
             {/* Feature list */}
             <ul className="flex flex-col gap-2.5">
               {[
-                lang === 'ta' ? 'பாரம்பரிய மூலிகை சிகிச்சை முறை' : lang === 'hi' ? 'पारंपरिक हर्बल उपचार पद्धति' : 'Traditional herbal treatment methodology',
-                lang === 'ta' ? 'பல தலைமுறை அனுபவம்' : lang === 'hi' ? 'बहु-पीढ़ी का अनुभव' : 'Multi-generational practitioner experience',
-                lang === 'ta' ? 'இயற்கை மூலிகை மருந்துகள்' : lang === 'hi' ? 'प्राकृतिक हर्बल दवाएं' : 'Natural herbal remedies',
-                lang === 'ta' ? 'நோயாளி நலன் மையப்படுத்திய சிகிச்சை' : lang === 'hi' ? 'रोगी-केंद्रित देखभाल' : 'Patient-centred care approach',
+                lang === 'ta' ? 'பாரம்பரிய மூலிகை சிகிச்சை முறை' : 'Traditional herbal treatment methodology',
+                lang === 'ta' ? 'பல தலைமுறை அனுபவம்' : 'Multi-generational practitioner experience',
+                lang === 'ta' ? 'இயற்கை மூலிகை மருந்துகள்' : 'Natural herbal remedies',
+                lang === 'ta' ? 'நோயாளி நலன் மையப்படுத்திய சிகிச்சை' : 'Patient-centred care approach',
               ].map(item => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
                   <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold"
@@ -770,10 +709,10 @@ export default function App() {
             <div className="relative z-10 h-full flex flex-col items-center justify-center gap-5 p-8 text-center">
               <div>
                 <p className="text-white/60 text-xs mb-1 uppercase tracking-wider">
-                  {lang === 'ta' ? 'எங்கள் இருப்பிடம்' : lang === 'hi' ? 'हमारा स्थान' : 'Our Location'}
+                  {lang === 'ta' ? 'எங்கள் இருப்பிடம்' : 'Our Location'}
                 </p>
                 <p className="font-bold text-xl text-white" style={{ fontFamily: 'var(--font-display)' }}>
-                  {lang === 'ta' ? 'சின்னசேலம், சேலம்' : lang === 'hi' ? 'चिन्नसेलम, सेलम' : 'Chinnasalem, Salem'}
+                  {lang === 'ta' ? 'சின்னசேலம், சேலம்' : 'Chinnasalem, Salem'}
                 </p>
                 <p className="text-white/65 text-sm mt-1">{t.fullAddress}</p>
               </div>
@@ -812,10 +751,10 @@ export default function App() {
                   style={{ borderColor: 'var(--color-gold)' }} />
                 <div>
                   <p className="font-bold text-base" style={{ color: 'var(--color-gold-light)', fontFamily: 'var(--font-display)' }}>
-                    {lang === 'ta' ? 'குப்புசாமி கவுண்டர்' : lang === 'hi' ? 'कुप्पुसामी गौंडर' : 'Kuppusamy Goundar'}
+                    {lang === 'ta' ? 'குப்புசாமி கவுண்டர்' : 'Kuppusamy Goundar'}
                   </p>
                   <p className="text-xs text-white/50 mt-0.5">
-                    {lang === 'ta' ? 'ஜாண்டீஸ் சிகிச்சை மையம்' : lang === 'hi' ? 'पीलिया उपचार केंद्र' : 'Jaundice Treatment Centre'}
+                    {lang === 'ta' ? 'ஜாண்டீஸ் சிகிச்சை மையம்' : 'Jaundice Treatment Centre'}
                   </p>
                 </div>
               </div>
