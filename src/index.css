@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-forest: #1a4731;
+  --color-forest-dark: #0f2d1f;
+  --color-forest-light: #255c40;
+  --color-gold: #c9960a;
+  --color-gold-light: #e5b020;
+  --color-gold-pale: #fef3c7;
+  --color-cream: #fdf8ee;
+  --color-cream-dark: #f5ecce;
+  --color-bark: #2d1f0e;
+  --color-leaf: #4a7c59;
+
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Noto Sans Tamil', 'Noto Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-bark);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar while keeping functionality */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-leaf);
+  border-radius: 2px;
+}
+
+/* Tamil text rendering optimization */
+[lang="ta"], .tamil {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  line-height: 1.7;
+}
+
+/* Gold shimmer animation */
+@keyframes shimmer {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.gold-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Slide down mobile menu */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-open {
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Pulse for urgent contact buttons */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(26, 71, 49, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(26, 71, 49, 0); }
+}
+
+.pulse-btn {
+  animation: pulse-green 2.5s ease-in-out infinite;
+}
